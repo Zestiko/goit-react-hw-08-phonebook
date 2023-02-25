@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
-import { setContactsValue } from 'redux/contactsSlice';
+import { setContactsValue } from 'redux/contacts/contactsSlice';
 import { useSelector, useDispatch } from 'react-redux';
-import { addContactsThunk } from 'redux/contacts.thunk';
+import { addContactsThunk } from 'redux/contacts/contacts.thunk';
 
 export const Form = () => {
   const [name, setName] = useState('');
@@ -43,7 +43,7 @@ export const Form = () => {
     if (includeName) {
       alert(`${name} is already in contacs`);
     } else {
-      addContactToState(createContact({ name, phone:number }));
+      addContactToState(createContact({ name, phone: number }));
       reset();
     }
   };

@@ -1,12 +1,11 @@
-import {  createSelector, createSlice } from '@reduxjs/toolkit';
+import { createSelector, createSlice } from '@reduxjs/toolkit';
 
 import {
   getContactsThunk,
   deleteContactsThunk,
   addContactsThunk,
 } from './contacts.thunk';
-import { setFilterValue } from './filterSlice';
-// import { setFilterValue } from './filterSlice';
+import { setFilterValue } from '../filter/filterSlice';
 
 const contactsInitialState = {
   items: [],
@@ -63,6 +62,3 @@ export const setfilterContacts = createSelector(
     );
   }
 );
-
-
-

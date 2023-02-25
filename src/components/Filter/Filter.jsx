@@ -2,10 +2,10 @@ import { nanoid } from 'nanoid';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { setFilterValue, setSerch } from 'redux/filterSlice';
+import { setFilterValue, setSerch } from 'redux/filter/filterSlice';
 
 export const Filter = () => {
-  const filterValue = useSelector(setFilterValue)
+  const filterValue = useSelector(setFilterValue);
   const dispatch = useDispatch();
   const filterID = nanoid();
   return (
@@ -16,14 +16,13 @@ export const Filter = () => {
           type="text"
           value={filterValue}
           name="filter"
-          onChange={(e) => dispatch(setSerch(e.target.value))}
+          onChange={e => dispatch(setSerch(e.target.value))}
           id={filterID}
         />
       </label>
     </>
   );
 };
-
 
 Filter.propTypes = {
   contacts: PropTypes.arrayOf(

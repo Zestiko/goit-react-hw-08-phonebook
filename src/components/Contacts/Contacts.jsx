@@ -1,26 +1,23 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  setfilterContacts,
-  setIsLoading,
-} from 'redux/contactsSlice';
+import { setfilterContacts, setIsLoading } from 'redux/contacts/contactsSlice';
 import PropTypes from 'prop-types';
-import { getContactsThunk, deleteContactsThunk } from 'redux/contacts.thunk';
+import {
+  getContactsThunk,
+  deleteContactsThunk,
+} from 'redux/contacts/contacts.thunk';
 
 import { BallTriangle } from 'react-loader-spinner';
-
 
 export const Contacts = () => {
   const contactLoading = useSelector(setIsLoading);
   const dispatch = useDispatch();
   const handleDelete = id => dispatch(deleteContactsThunk(id));
   const filterContacts = useSelector(setfilterContacts);
-  
-  
+
   useEffect(() => {
     dispatch(getContactsThunk());
   }, [dispatch]);
-
 
   return (
     <>
