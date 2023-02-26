@@ -12,9 +12,9 @@ export const Form = () => {
   const dispatch = useDispatch();
   const addContactToState = contact => dispatch(addContactsThunk(contact));
 
-  const createContact = ({ name, phone }) => ({
+  const createContact = ({ name, number }) => ({
     name,
-    phone,
+    number,
   });
 
   const handelChange = e => {
@@ -43,7 +43,7 @@ export const Form = () => {
     if (includeName) {
       alert(`${name} is already in contacs`);
     } else {
-      addContactToState(createContact({ name, phone: number }));
+      addContactToState(createContact({ name, number }));
       reset();
     }
   };
