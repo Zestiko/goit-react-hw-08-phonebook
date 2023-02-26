@@ -1,9 +1,19 @@
-import css from './LoginForm.module.css'
+import css from './LoginForm.module.css';
+import { useDispatch } from 'react-redux';
+import { login } from 'redux/auth/auth.thunk';
 
 export const LoginForm = () => {
-  const handleSubmit = () => {
-    // todo
-  }
+  const dispatch = useDispatch();
+  const handleSubmit = e => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    dispatch(
+      login({
+        email: form.elements.email.value,
+        password: form.elements.password.value,
+      })
+    );
+  };
   return (
     <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
       <label className={css.label}>
@@ -17,4 +27,4 @@ export const LoginForm = () => {
       <button type="submit">Log In</button>
     </form>
   );
-}
+};
