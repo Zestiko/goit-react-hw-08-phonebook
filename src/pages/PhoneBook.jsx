@@ -8,6 +8,7 @@ import { Form } from "components/Form/Form";
     <>
       <h1>Phonebook</h1>
       <Form />
+      
       <h2>Contacts</h2>
       <Filter />
       <Contacts />

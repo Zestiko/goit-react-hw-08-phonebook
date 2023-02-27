@@ -8,7 +8,7 @@ const setAuthToken = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
-const unSetAuthToken = token => {
+const unSetAuthToken = () => {
   axios.defaults.headers.common.Authorization = '';
 };
 

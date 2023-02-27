@@ -36,10 +36,10 @@ export const Contacts = () => {
             />
           </div>
         ) : (
-          filterContacts.map(({ name, id, phone }) => {
+          filterContacts.map(({ name, id, number }) => {
             return (
               <li key={id}>
-                {name}: {phone}
+                {name}: {number}
                 <button key={id} type="button" onClick={() => handleDelete(id)}>
                   delete
                 </button>
