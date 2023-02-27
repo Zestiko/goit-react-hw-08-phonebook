@@ -5,10 +5,12 @@ import css from './Navigation.module.css'
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();
   return (
-    <nav>
+    <nav className={css.nav}>
       <NavLink
         to="/"
-        className={({ isActive }) => (isActive ? css.navLinkActive : css.link)}
+        className={({ isActive }) =>
+          isActive ? css.navButtonIsActive : css.navButton
+        }
       >
         Home
       </NavLink>
@@ -16,7 +18,7 @@ export const Navigation = () => {
         <NavLink
           to="/phonebook"
           className={({ isActive }) =>
-            isActive ? css.navLinkActive : css.link
+            isActive ? css.navButtonIsActive : css.navButton
           }
         >
           Phonebook

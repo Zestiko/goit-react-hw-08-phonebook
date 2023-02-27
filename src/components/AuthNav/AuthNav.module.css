@@ -9,3 +9,8 @@
 .link.active {
   color: #e84a5f;
 }
+
+.authNav {
+  display: flex;
+  gap: 15px;
+}

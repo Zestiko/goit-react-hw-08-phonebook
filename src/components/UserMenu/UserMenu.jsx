@@ -2,6 +2,9 @@ import axios from 'axios';
 import { useAuth } from 'hooks';
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/auth.thunk';
+
+import Button from '@mui/material/Button';
+import LogoutIcon from '@mui/icons-material/Logout';
 import css from './UserMenu.module.css'
 export const UserMenu = () => {
   const dispatch = useDispatch();
@@ -11,15 +14,17 @@ export const UserMenu = () => {
       {/* {user.name} */}
       <p className={css.username}>Welcome, {user.email}</p>
 
-      <button
-        type="button"
+      
+      <Button
         onClick={() => {
           console.log(axios.defaults.headers.common.Authorization);
           dispatch(logOut());
         }}
+        variant="contained"
+        endIcon={<LogoutIcon />}
       >
-        Logout
-      </button>
+        logout
+      </Button>
     </div>
   );
 }

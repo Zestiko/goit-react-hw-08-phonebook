@@ -1,26 +1,65 @@
+import img from '../images/PhoneBook.png';
+import Button from '@mui/material/Button';
+import LoginIcon from '@mui/icons-material/Login';
+import HowToRegIcon from '@mui/icons-material/HowToReg';
+import { useNavigate } from 'react-router-dom';
 const styles = {
   container: {
-    minHeight: 'calc(100vh - 50px)',
+    minHeight: 'calc(100vh - 350px)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+
+    flexDirection: 'column',
   },
   title: {
     fontWeight: 500,
     fontSize: 48,
     textAlign: 'center',
   },
+  authNav: {
+    display: 'flex',
+    gap: '15px',
+  },
+  span: {
+    display: 'flex',
+    gap: '10px',
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "1.5em",
+    fontWeight: "bold",
+    margin: "22px 0"
+  },
 };
 
-  const HomePage = () => {
+const HomePage = () => {
+  const navigate = useNavigate();
   return (
     <div style={styles.container}>
-      <h1 style={styles.title}>
-       PhoneBook  Hello{' '}
-        <span role="img" aria-label="Greeting icon">
-          💁‍♀️
-        </span>
-      </h1>
+      <h1>Welcome to PhoneBook App</h1>
+      <img src={img} alt="Logo" height="300" />
+
+      <span style={styles.span}>
+        If you already have an account
+        <div style={styles.authNav}>
+          <Button
+            variant="contained"
+            endIcon={<LoginIcon />}
+            onClick={() => navigate('/login')}
+          >
+            Log In
+          </Button>
+        </div>
+        or{' '}
+        <Button
+          variant="contained"
+          endIcon={<HowToRegIcon />}
+          onClick={() => navigate('/register')}
+        >
+          Register
+        </Button>
+        new account.
+      </span>
     </div>
   );
 };

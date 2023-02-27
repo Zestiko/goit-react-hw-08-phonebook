@@ -1,4 +1,9 @@
 @import-normalize; /* bring in normalize.css styles */
+@import '@fontsource/roboto/300.css';
+@import '@fontsource/roboto/400.css';
+@import '@fontsource/roboto/500.css';
+@import '@fontsource/roboto/700.css';
+
 
 body {
   margin: 0;
@@ -14,64 +19,3 @@ code {
     monospace;
 }
 
-/* body{
-  color: darkseagreen;
-}
-
-form {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-input{
-  border-radius: 25px;
-  padding: 5px;
-  border-width: 1px;
-  border-color:darkseagreen;
-}
-input:focus,
-input:hover {
-  outline: none;
-}
-
-label {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-div {
-  width: 350px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-li {
-  display: inline-flex;
-  gap: 20px;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-}
-
-button {
-  padding: 10px;
-  border-radius: 25px;
-  border-color: inherit;
-  background-color: darkseagreen;
-  color: #fff;
-  text-transform: uppercase;
-}
-button:hover {
-  background-color:#fff;
-  color: darkseagreen;
-}
-
-
-.loader {
-  width: 129px;
-}
-ul {
-  padding: 0;
-} */

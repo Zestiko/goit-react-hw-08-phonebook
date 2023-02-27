@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { setFilterValue, setSerch } from 'redux/filter/filterSlice';
+import { TextField } from '@mui/material';
 
 export const Filter = () => {
   const filterValue = useSelector(setFilterValue);
@@ -11,13 +12,18 @@ export const Filter = () => {
   return (
     <>
       <label htmlFor={filterID}>
-        Find contac by name
-        <input
-          type="text"
+        <TextField
+          id="standard-multiline-flexible"
+          label="Find contac by name"
+          sx={{
+            width:300,
+          }}
           value={filterValue}
-          name="filter"
+          multiline
+          maxRows={4}
+          variant="standard"
           onChange={e => dispatch(setSerch(e.target.value))}
-          id={filterID}
+          
         />
       </label>
     </>

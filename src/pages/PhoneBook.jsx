@@ -1,17 +1,23 @@
-import { Contacts } from "components/Contacts/Contacts";
+// import { Contacts } from "components/Contacts/Contacts";
+import Contacts2 from "components/Contacts/Contacts2";
 import { Filter } from "components/Filter/Filter";
 import { Form } from "components/Form/Form";
+import Typography from '@mui/material/Typography';
 
 
  const PhoneBook = () => {
   return (
     <>
-      <h1>Phonebook</h1>
+      <Typography variant="h2" gutterBottom>
+        Create Contact
+      </Typography>
       <Form />
-      
-      <h2>Contacts</h2>
+
+      <Typography variant="h4" gutterBottom>
+         Contacts
+      </Typography>
       <Filter />
-      <Contacts />
+      <Contacts2 />
     </>
   );
 
